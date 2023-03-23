@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main
+{
+ public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+     System.out.print("Введите первое число: ");
+     int number1 = scanner.nextInt();
+     System.out.print("Введите второе число: ");
+     int number2 = scanner.nextInt();
+     
+     
+     int absNumber1 = Math.abs(number1);
+     int absNumber2 = Math.abs(number2);
+     
+     int absHigherNumber = Math.max(absNumber1, absNumber2);
+     int absLowerNumber = Math.min(absNumber1, absNumber2);
+     
+     int lcm = absHigherNumber;
+     
+     while (lcm % absLowerNumber != 0) {
+         lcm += absHigherNumber;
+         
+     }     
+     System.out.println("Наименьшее общее кратное: " + lcm);
+     int nod = 0;
+     nod = absNumber1*absNumber2/lcm;
+     System.out.print("Наибольший общий делитель: " + nod);
+ }
+}
