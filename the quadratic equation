@@ -1,0 +1,25 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("x^2 + b * x -c = 0");
+        System.out.println("Введите значение a- ");
+        int a = scanner.nextInt();
+        System.out.println("Введите значение b- ");
+        int b = scanner.nextInt();
+        System.out.println("Введите значение c- ");
+        int c = scanner.nextInt();
+        int D = b^2 - 4 * a * c;
+        if (D > 0) {
+            System.out.print(-b - Math.sqrt(D) / ( 2 * a));
+            System.out.print(-b + Math.sqrt(D) / (2 * a));
+        } else if (D == 0) {
+            System.out.print("Уравнение имеет единственный корень: x = " + (-b / (2 * a)));
+        } else {
+            System.out.println("Уравнение не имеет действительных корней");
+        }
+    }
+}
