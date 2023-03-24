@@ -3,27 +3,27 @@ public class Main
 {
  public static void main(String[] args) {
      Scanner scanner = new Scanner(System.in);
-     System.out.print("Введите первое число: ");
+     System.out.print("Введите первое число: "); //вводим данные
      int number1 = scanner.nextInt();
      System.out.print("Введите второе число: ");
      int number2 = scanner.nextInt();
      
      
-     int absNumber1 = Math.abs(number1);
+     int absNumber1 = Math.abs(number1); // делаем числа абсолютными т.к. НОД не может быть отрицательным 
      int absNumber2 = Math.abs(number2);
      
-     int absHigherNumber = Math.max(absNumber1, absNumber2);
+     int absHigherNumber = Math.max(absNumber1, absNumber2); // находим максимальное и минимальное значения
      int absLowerNumber = Math.min(absNumber1, absNumber2);
      
      int lcm = absHigherNumber;
      
-     while (lcm % absLowerNumber != 0) {
+     while (lcm % absLowerNumber != 0) { // путем деления наибольшего числа на наименьшего добиваемся целого числа (прим 72/42 и так по порядку пока не получим целый остаток)
          lcm += absHigherNumber;
          
      }     
      System.out.println("Наименьшее общее кратное: " + lcm);
      int nod = 0;
-     nod = absNumber1*absNumber2/lcm;
+     nod = absNumber1*absNumber2/lcm; // находим нод, т.кю формула нок это нок(a,b) =  (a * b) / нод(a,b) (а это уравнения, хначит и нок и нод можно поменять)
      System.out.print("Наибольший общий делитель: " + nod);
  }
 }
