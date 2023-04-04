@@ -5,22 +5,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите строку"); 
+        System.out.println("Введите строку");
         String firstString = sc.nextLine();
         String secondString = reverse(firstString);
 
-        System.out.println("Было " + firstString);
-        System.out.println("Стало " + secondString);
-        System.out.println(firstString.equalsIgnoreCase(secondString) ? "Это полиндром" : "Это не полиндром");
+        System.out.println("Было: " + firstString);
+        System.out.println("Стало: " + secondString);
+        System.out.println(firstString.equalsIgnoreCase(secondString) ? "Это палиндром" : "Это не палиндром");
     }
 
     public static String reverse(String currentString) {
-        char[] chars = currentString.toCharArray();
+    char[] chars = currentString.toCharArray();
         for (int i = 0; i < chars.length / 2; i++) {
-            char temp = chars[i];
+
+           char temp = chars[i];
             chars[i] = chars[chars.length - i - 1];
             chars[chars.length - i - 1] = temp;
         }
-        return new String(chars);
+    return new String(chars);
     }
 }
+
