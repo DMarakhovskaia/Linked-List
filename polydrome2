@@ -1,18 +1,18 @@
+package org.example;
 import java.util.Scanner;
 
-public class Palindrome {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите строку: ");
-        String s = scanner.nextLine();
+class MyProgram{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
         s = s.toLowerCase();
-        s = s.replaceAll("\\s+", ""); 
+        s = s.replaceAll("\\s+", "");
 
-        
+
         if (s.equals(new StringBuilder(s).reverse().toString())) {
-            System.out.println("Это строчный палиндром");
+            System.out.println("строчный палиндром");
         } else {
-            System.out.println("Это не строчный палиндром");
+            System.out.println("не строчный палиндром");
         }
     }
 }
